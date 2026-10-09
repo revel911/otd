@@ -1,6 +1,6 @@
 name: Deploy site to GitHub Pages
 
-# Publishes the static site at the repository root to ourtimedesigns.com (Pages custom domain, set in
+# Publishes the static site at the repository root to ourtimedesignsllc.com (Pages custom domain, set in
 # Settings -> Pages). No build step: the checkout is uploaded as-is, minus docs/ and .github/.
 on:
   workflow_dispatch:

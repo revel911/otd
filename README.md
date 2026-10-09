@@ -1,6 +1,6 @@
 # Our Time Designs website
 
-The company site for Our Time Designs, LLC, published at https://ourtimedesigns.com. One static page: who we are, what we make (PadLock), how to reach us. Open `index.html` directly in a browser, or serve this directory with any static web server. No build step and no runtime dependencies; the only external request is the Figtree font from Google Fonts.
+The company site for Our Time Designs, LLC, published at https://ourtimedesignsllc.com. One static page: who we are, what we make (PadLock), how to reach us. Open `index.html` directly in a browser, or serve this directory with any static web server. No build step and no runtime dependencies; the only external request is the Figtree font from Google Fonts.
 
 Design notes: `docs/superpowers/specs/2026-10-09-otd-site-design.md`. The leaf mark (`assets/leaf-*.svg`) is traced from the original logo. The dark theme follows the system; the header toggle overrides it and is remembered per browser.
 
@@ -10,8 +10,8 @@ Every push to `main` runs `.github/workflows/pages.yml`, which uploads `index.ht
 
 One-time setup, in the GitHub repository:
 1. Settings → Pages → Source: **GitHub Actions**.
-2. Settings → Pages → Custom domain: `ourtimedesigns.com`, then enable **Enforce HTTPS** once the check passes.
-3. At the registrar, point the domain at GitHub Pages: four `A` records for the apex (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`) and a `CNAME` for `www` to `<github user>.github.io`. If `www` should work, add it as the custom domain instead and GitHub redirects the apex, or vice versa.
+2. Settings → Pages → Custom domain: `ourtimedesignsllc.com`, then enable **Enforce HTTPS** once the check passes.
+3. At the registrar, point the domain at GitHub Pages: four `A` records for the apex (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`) and a `CNAME` for `www` to `revel911.github.io`. If `www` should work, add it as the custom domain instead and GitHub redirects the apex, or vice versa.
 
 ## Contact form
 

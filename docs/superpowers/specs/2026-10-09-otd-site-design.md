@@ -8,7 +8,7 @@ The company front door for Our Time Designs, LLC (Richmond, VA). A visitor shoul
 Story: Our Time Designs started in 2008 as a small design and marketing studio, paused while the founder led design at Capital One, and is back in 2026 as a product studio building its own things. PadLock is product one.
 
 ## Scope
-One static page, anchored sections: hero, products (one PadLock card, room for more), about (studio + founder, link to LinkedIn), contact (form), footer (LLC line). Plain HTML/CSS/JS, no build step, no framework, no analytics. Deployed with GitHub Pages to ourtimedesigns.com, same pattern as drumwithpadlock.com.
+One static page, anchored sections: hero, products (one PadLock card, room for more), about (studio + founder, link to LinkedIn), contact (form), footer (LLC line). Plain HTML/CSS/JS, no build step, no framework, no analytics. Deployed with GitHub Pages to ourtimedesignsllc.com, same pattern as drumwithpadlock.com.
 
 Out of scope: résumé timeline, blog, second product, CMS.
 
