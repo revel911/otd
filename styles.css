@@ -1,0 +1,145 @@
+/* Our Time Designs. One page. Letterhead blue, grays, white; orange appears twice. */
+
+:root {
+  --blue: #1b74c0;
+  --blue-deep: #0f4f87;
+  --blue-wash: #e6f0f9;
+  --charcoal: #353a40;
+  --slate: #6b7680;
+  --mist: #eef2f6;
+  --line: #d6dde4;
+  --white: #ffffff;
+  --orange: #e8702a;
+  --ink-dark: #10161b;   /* PadLock card only */
+  --amber: #f4b45f;      /* PadLock card only */
+  --rule: 14px;          /* the blue rule down the right edge */
+  --wrap: 1080px;
+  --gutter: 16px;
+  font-family: "Figtree", "Segoe UI", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  color: var(--charcoal);
+  background: var(--white);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The letterhead's blue rule, running down the right edge on wide screens. */
+@media (min-width: 900px) {
+  body { border-right: var(--rule) solid var(--blue); min-height: 100vh; }
+}
+
+a { color: var(--blue-deep); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--blue); }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; border-radius: 2px; }
+
+h1, h2, h3 { margin: 0; font-weight: 700; letter-spacing: -0.015em; line-height: 1.1; color: var(--charcoal); }
+h2 { font-size: clamp(1.75rem, 3.5vw, 2.25rem); }
+h3 { font-size: 1.375rem; }
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+
+.wrap { width: min(var(--wrap), 100% - 2 * var(--gutter)); margin-inline: auto; }
+
+.skip { position: absolute; left: -999px; top: 8px; background: var(--charcoal); color: #fff; padding: 8px 12px; z-index: 10; }
+.skip:focus { left: 8px; }
+
+/* Bracketed info strip, as on the letterhead: [ segment ] [ segment ] */
+.strip { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 0.8125rem; color: var(--slate); padding: 10px var(--gutter) 8px; width: min(var(--wrap), 100% - 2 * var(--gutter)); margin-inline: auto; }
+.strip span::before { content: "[ "; color: var(--blue); }
+.strip span::after { content: " ]"; color: var(--blue); }
+.strip a { color: var(--slate); }
+.strip a:hover { color: var(--blue); }
+
+/* Blue / orange / charcoal stripe */
+.stripes { display: grid; grid-template-rows: 6px 3px 3px; }
+.stripes i:nth-child(1) { background: var(--blue); }
+.stripes i:nth-child(2) { background: var(--orange); }
+.stripes i:nth-child(3) { background: var(--charcoal); }
+
+.header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; padding: 20px 0; }
+.brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--charcoal); font-size: 1.125rem; letter-spacing: -0.01em; }
+.brand img { display: block; border-radius: 4px; }
+.brand span { white-space: nowrap; }
+.brand b { font-weight: 700; color: var(--blue); }
+.header nav { display: flex; gap: 22px; font-weight: 500; }
+.header nav a { color: var(--charcoal); text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
+.header nav a:hover { color: var(--blue); border-bottom-color: var(--blue); }
+
+/* Hero */
+.hero { position: relative; padding: clamp(48px, 9vw, 120px) 0 clamp(48px, 7vw, 96px); overflow: hidden; }
+.since { color: var(--slate); font-size: 0.9375rem; margin-bottom: 20px; }
+.hero h1 { font-size: clamp(2.25rem, 6vw, 4.25rem); max-width: 14ch; letter-spacing: -0.025em; }
+.hero h1 br { display: none; }
+@media (min-width: 700px) { .hero h1 br { display: inline; } }
+.lede { font-size: clamp(1.125rem, 1.6vw, 1.3125rem); max-width: 56ch; margin: 28px 0 36px; color: #46505a; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-leaf { position: absolute; right: -40px; top: 50%; translate: 0 -50%; width: clamp(200px, 28vw, 340px); height: auto; opacity: 0.12; pointer-events: none; }
+@media (max-width: 899px) { .hero-leaf { right: -80px; top: 24px; translate: none; width: 220px; } }
+
+/* Buttons */
+.button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 4px; font-weight: 500; text-decoration: none; border: 2px solid transparent; cursor: pointer; font: inherit; font-weight: 500; }
+.button.primary { background: var(--blue); color: #fff; border-color: var(--blue); }
+.button.primary:hover { background: var(--blue-deep); border-color: var(--blue-deep); color: #fff; }
+.button.quiet { background: transparent; color: var(--blue-deep); border-color: var(--line); }
+.button.quiet:hover { border-color: var(--blue); color: var(--blue); }
+
+/* Sections */
+.section { padding: clamp(56px, 8vw, 104px) 0; }
+.section.band { width: auto; background: var(--mist); }
+.section.band > * { width: min(var(--wrap), 100% - 2 * var(--gutter)); margin-inline: auto; }
+.section-heading { display: grid; gap: 8px; margin-bottom: 40px; }
+.section-heading p { color: var(--slate); font-size: 1.125rem; max-width: 60ch; }
+.section-heading h2 { padding-left: 18px; border-left: 6px solid var(--blue); }
+
+/* Product card: PadLock's own dark/amber, sitting on the white page */
+.product { display: grid; grid-template-columns: 1fr; gap: 32px; background: var(--ink-dark); color: #d7dee4; border-radius: 8px; padding: clamp(28px, 4vw, 48px); align-items: center; }
+@media (min-width: 820px) { .product { grid-template-columns: 1.3fr 1fr; } }
+.product h3 { color: #fff; font-size: clamp(2rem, 4vw, 2.75rem); letter-spacing: -0.02em; }
+.product-status { display: inline-block; font-size: 0.8125rem; font-weight: 500; color: var(--ink-dark); background: var(--amber); padding: 3px 10px; border-radius: 999px; margin-bottom: 14px; }
+.product-tag { color: var(--amber); font-weight: 500; font-size: 1.125rem; margin: 8px 0 16px; }
+.product-points { margin: 0 0 28px; padding-left: 1.2em; }
+.product-points li { margin-bottom: 8px; }
+.product-points li::marker { color: var(--amber); }
+.button.product-button { background: var(--amber); color: var(--ink-dark); border-color: var(--amber); }
+.button.product-button:hover { background: #ffcf8a; border-color: #ffcf8a; color: var(--ink-dark); }
+.product-art svg { width: 100%; height: auto; display: block; }
+.product-art .grid path { stroke: #2a343c; stroke-width: 1; }
+.product-art .wave { stroke: #68c6bc; stroke-width: 2.5; stroke-linecap: round; }
+.product-art .hits rect { fill: var(--amber); }
+
+/* About */
+.about { display: grid; gap: 40px; }
+@media (min-width: 820px) { .about { grid-template-columns: 1fr 1fr; gap: 56px; } }
+.about h3 { margin-bottom: 14px; }
+.about p { max-width: 58ch; }
+.text-link { font-weight: 500; }
+
+/* Contact */
+.contact-form { display: grid; gap: 14px; max-width: 680px; }
+.form-row { display: grid; gap: 14px; }
+@media (min-width: 600px) { .form-row { grid-template-columns: 1fr 1fr; } }
+.form-row > div { display: grid; gap: 6px; }
+.contact-form label { font-weight: 500; font-size: 0.9375rem; }
+.contact-form input, .contact-form textarea { width: 100%; font: inherit; color: var(--charcoal); background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 11px 12px; }
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--blue); outline: none; box-shadow: 0 0 0 3px var(--blue-wash); }
+.contact-form textarea { resize: vertical; min-height: 160px; }
+.form-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form-error { color: #b3261e; font-weight: 500; min-height: 1.5em; margin: 0; }
+.form-error:empty { display: none; }
+.contact-form .button { justify-self: start; }
+.fine-print { font-size: 0.875rem; color: var(--slate); }
+.contact-thanks { max-width: 680px; padding: 24px 28px; border-left: 6px solid var(--blue); background: var(--blue-wash); }
+
+/* Footer */
+.footer { margin-top: 24px; }
+.footer-inner { padding: 32px 0 40px; display: grid; gap: 18px; }
+.footer .strip { padding: 0; width: auto; margin: 0; }
+.copyright { font-size: 0.8125rem; color: var(--slate); }
