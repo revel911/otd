@@ -6,7 +6,7 @@ Design notes: `docs/superpowers/specs/2026-10-09-otd-site-design.md`. The leaf m
 
 ## Deployment
 
-Every push to `main` runs `.github/workflows/pages.yml`, which uploads `index.html`, `styles.css`, `site.js` and `assets/` to GitHub Pages. `docs/` and `.github/` are not published.
+Every push to `main` runs `.github/workflows/pages.yml`, which uploads `index.html`, `styles.css`, `site.js`, `hero-motion.js` and `assets/` to GitHub Pages. `docs/` and `.github/` are not published.
 
 One-time setup, in the GitHub repository:
 1. Settings → Pages → Source: **GitHub Actions**.

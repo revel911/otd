@@ -1,4 +1,4 @@
-/* Our Time Designs. One page. Letterhead blue, grays, white; orange appears twice. */
+/* Our Time Designs. One page. Letterhead blue, grays, white. */
 
 :root {
   --blue: #1b74c0;
@@ -9,7 +9,6 @@
   --mist: #eef2f6;
   --line: #d6dde4;
   --white: #ffffff;
-  --orange: #e8702a;
   --ink-dark: #10161b;   /* PadLock card only */
   --amber: #f4b45f;      /* PadLock card only */
   --rule: 14px;          /* the blue rule down the right edge */
@@ -38,7 +37,7 @@ body {
 
 a { color: var(--blue-deep); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 a:hover { color: var(--blue); }
-:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; border-radius: 2px; }
+:focus-visible { outline: 3px solid var(--blue-deep); outline-offset: 3px; border-radius: 2px; }
 
 h1, h2, h3 { margin: 0; font-weight: 700; letter-spacing: -0.015em; line-height: 1.1; color: var(--charcoal); }
 h2 { font-size: clamp(1.75rem, 3.5vw, 2.25rem); }
@@ -58,10 +57,10 @@ p:last-child { margin-bottom: 0; }
 .strip a { color: var(--slate); }
 .strip a:hover { color: var(--blue); }
 
-/* Blue / orange / charcoal stripe */
-.stripes { display: grid; grid-template-rows: 6px 3px 3px; }
+/* Blue / white / charcoal stripe */
+.stripes { display: grid; grid-template-rows: 6px 2px 3px; }
 .stripes i:nth-child(1) { background: var(--blue); }
-.stripes i:nth-child(2) { background: var(--orange); }
+.stripes i:nth-child(2) { background: var(--white); }
 .stripes i:nth-child(3) { background: var(--charcoal); }
 
 .header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; padding: 20px 0; }
@@ -73,16 +72,18 @@ p:last-child { margin-bottom: 0; }
 .header nav a { color: var(--charcoal); text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
 .header nav a:hover { color: var(--blue); border-bottom-color: var(--blue); }
 
-/* Hero */
-.hero { position: relative; padding: clamp(48px, 9vw, 120px) 0 clamp(48px, 7vw, 96px); overflow: hidden; }
+/* Hero: full-bleed, animated canvas behind the copy (hero-motion.js) */
+.hero { position: relative; overflow: hidden; background: linear-gradient(180deg, #eaf3fb 0%, #f6f9fc 70%, var(--white) 100%); }
+.hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hero-inner { position: relative; padding: clamp(56px, 10vw, 136px) 0 clamp(56px, 8vw, 112px); }
 .since { color: var(--slate); font-size: 0.9375rem; margin-bottom: 20px; }
 .hero h1 { font-size: clamp(2.25rem, 6vw, 4.25rem); max-width: 14ch; letter-spacing: -0.025em; }
 .hero h1 br { display: none; }
 @media (min-width: 700px) { .hero h1 br { display: inline; } }
-.lede { font-size: clamp(1.125rem, 1.6vw, 1.3125rem); max-width: 56ch; margin: 28px 0 36px; color: #46505a; }
+.lede { font-size: clamp(1.125rem, 1.6vw, 1.3125rem); max-width: 54ch; margin: 28px 0 36px; color: #46505a; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.hero-leaf { position: absolute; right: -40px; top: 50%; translate: 0 -50%; width: clamp(200px, 28vw, 340px); height: auto; opacity: 0.12; pointer-events: none; }
-@media (max-width: 899px) { .hero-leaf { right: -80px; top: 24px; translate: none; width: 220px; } }
+.hero-pause { position: absolute; right: var(--gutter); bottom: 12px; font: inherit; font-size: 0.8125rem; color: var(--slate); background: transparent; border: 0; padding: 6px 8px; cursor: pointer; }
+.hero-pause:hover { color: var(--blue); }
 
 /* Buttons */
 .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 4px; font-weight: 500; text-decoration: none; border: 2px solid transparent; cursor: pointer; font: inherit; font-weight: 500; }

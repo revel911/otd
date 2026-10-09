@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="styles.css">
 <script src="site.js" defer></script>
+<script src="hero-motion.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -36,15 +37,18 @@
 </header>
 
 <main id="main">
-<section class="hero wrap" id="top">
-  <p class="since">Est. 2008, Richmond, VA</p>
-  <h1>We&rsquo;re back. <br>This time, we&rsquo;re building our own.</h1>
-  <p class="lede">Our Time Designs started as a small design and marketing studio for other people&rsquo;s businesses. Today it&rsquo;s a product studio: we design, build and ship our own software, starting with music tools made by a musician.</p>
-  <div class="actions">
-    <a class="button primary" href="#products">Meet PadLock</a>
-    <a class="button quiet" href="#about">Our story</a>
+<section class="hero" id="top">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  <div class="wrap hero-inner">
+    <p class="since">Est. 2008, Richmond, VA</p>
+    <h1>We&rsquo;re back. <br>This time, we&rsquo;re building our own.</h1>
+    <p class="lede">Our Time Designs started as a small design and marketing studio for other people&rsquo;s businesses. Today it&rsquo;s a product studio: we design, build and ship our own software, starting with music tools made by a musician.</p>
+    <div class="actions">
+      <a class="button primary" href="#products">Meet PadLock</a>
+      <a class="button quiet" href="#about">Our story</a>
+    </div>
   </div>
-  <img class="hero-leaf" src="assets/leaf-mark.svg" width="320" height="320" alt="" aria-hidden="true">
+  <button class="hero-pause" id="hero-pause" type="button" aria-pressed="false">Pause motion</button>
 </section>
 
 <section class="section wrap" id="products">
