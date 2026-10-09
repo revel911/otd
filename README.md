@@ -4,15 +4,6 @@ The company site for Our Time Designs, LLC, published at https://ourtimedesignsl
 
 Design notes: `docs/superpowers/specs/2026-10-09-otd-site-design.md`. The leaf mark (`assets/leaf-*.svg`) is traced from the original logo. The dark theme follows the system; the header toggle overrides it and is remembered per browser.
 
-## Deployment
-
-Every push to `main` runs `.github/workflows/pages.yml`, which uploads `index.html`, `styles.css`, `site.js`, `hero-motion.js` and `assets/` to GitHub Pages. `docs/` and `.github/` are not published.
-
-One-time setup, in the GitHub repository:
-1. Settings → Pages → Source: **GitHub Actions**.
-2. Settings → Pages → Custom domain: `ourtimedesignsllc.com`, then enable **Enforce HTTPS** once the check passes.
-3. At the registrar, point the domain at GitHub Pages: four `A` records for the apex (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`) and a `CNAME` for `www` to `revel911.github.io`. If `www` should work, add it as the custom domain instead and GitHub redirects the apex, or vice versa.
-
 ## Contact form
 
 The form posts to a Google Apps Script web app (`contact-apps-script.gs`) that emails each message to support@ourtimedesignsllc.com, with the sender's address as Reply-To. Until the web app's URL is set, Send opens the visitor's email app addressed to support instead.
