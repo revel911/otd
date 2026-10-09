@@ -25,6 +25,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true   # turns Pages on (source: GitHub Actions) the first time this runs
       - name: Stage public files
         run: |
           mkdir -p _site
