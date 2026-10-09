@@ -69,3 +69,27 @@ form.addEventListener('submit', event => {
   if (error.textContent) return;
   if (connected) sendToReceiver(v); else sendByEmail(v);
 });
+
+// Light / dark. The page follows the system until the visitor picks one; the pick is remembered in
+// this browser only. A tiny inline script in <head> applies it before first paint.
+const toggle = document.getElementById('theme-toggle');
+const systemDark = matchMedia('(prefers-color-scheme: dark)');
+function currentlyDark() {
+  const forced = document.documentElement.dataset.theme;
+  return forced ? forced === 'dark' : systemDark.matches;
+}
+function paintToggle() {
+  const dark = currentlyDark();
+  toggle.textContent = dark ? 'Light' : 'Dark';
+  toggle.setAttribute('aria-pressed', String(dark));
+  toggle.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+}
+toggle.addEventListener('click', () => {
+  const next = currentlyDark() ? 'light' : 'dark';
+  document.documentElement.dataset.theme = next;
+  try { localStorage.setItem('theme', next); } catch (e) { /* private mode: not remembered */ }
+  paintToggle();
+  document.dispatchEvent(new Event('themechange'));
+});
+systemDark.addEventListener('change', paintToggle);
+paintToggle();

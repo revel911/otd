@@ -2,7 +2,7 @@
 
 The company site for Our Time Designs, LLC, published at https://ourtimedesigns.com. One static page: who we are, what we make (PadLock), how to reach us. Open `index.html` directly in a browser, or serve this directory with any static web server. No build step and no runtime dependencies; the only external request is the Figtree font from Google Fonts.
 
-Design notes: `docs/superpowers/specs/2026-10-09-otd-site-design.md`. The leaf mark (`assets/leaf-*.svg`) is a redraw of the 2008 letterhead logo, not a trace.
+Design notes: `docs/superpowers/specs/2026-10-09-otd-site-design.md`. The leaf mark (`assets/leaf-*.svg`) is traced from the original logo. The dark theme follows the system; the header toggle overrides it and is remembered per browser.
 
 ## Deployment
 

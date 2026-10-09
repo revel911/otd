@@ -11,10 +11,52 @@
   --white: #ffffff;
   --ink-dark: #10161b;   /* PadLock card only */
   --amber: #f4b45f;      /* PadLock card only */
+  --card-edge: transparent;
+  --hero-top: #eaf3fb;
+  --hero-mid: #f6f9fc;
+  --lede-ink: #46505a;
+  --error: #b3261e;
+  color-scheme: light;
   --rule: 14px;          /* the blue rule down the right edge */
   --wrap: 1080px;
   --gutter: 16px;
   font-family: "Figtree", "Segoe UI", system-ui, sans-serif;
+}
+
+/* Dark: follows the system, or data-theme on <html> when the visitor picks one. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --blue: #4e9fe3;
+    --blue-deep: #8cc6ff;
+    --blue-wash: #16293b;
+    --charcoal: #e6ebf0;
+    --slate: #9aa6b2;
+    --mist: #171d23;
+    --line: #2f3a44;
+    --white: #0f1419;
+    --card-edge: #2a343d;
+    --hero-top: #142131;
+    --hero-mid: #111920;
+    --lede-ink: #c3ccd5;
+    --error: #ff8a80;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+    --blue: #4e9fe3;
+    --blue-deep: #8cc6ff;
+    --blue-wash: #16293b;
+    --charcoal: #e6ebf0;
+    --slate: #9aa6b2;
+    --mist: #171d23;
+    --line: #2f3a44;
+    --white: #0f1419;
+    --card-edge: #2a343d;
+    --hero-top: #142131;
+    --hero-mid: #111920;
+    --lede-ink: #c3ccd5;
+    --error: #ff8a80;
+    color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -47,7 +89,7 @@ p:last-child { margin-bottom: 0; }
 
 .wrap { width: min(var(--wrap), 100% - 2 * var(--gutter)); margin-inline: auto; }
 
-.skip { position: absolute; left: -999px; top: 8px; background: var(--charcoal); color: #fff; padding: 8px 12px; z-index: 10; }
+.skip { position: absolute; left: -999px; top: 8px; background: var(--blue); color: #fff; padding: 8px 12px; z-index: 10; }
 .skip:focus { left: 8px; }
 
 /* Bracketed info strip, as on the letterhead: [ segment ] [ segment ] */
@@ -61,26 +103,30 @@ p:last-child { margin-bottom: 0; }
 .stripes { display: grid; grid-template-rows: 6px 2px 3px; }
 .stripes i:nth-child(1) { background: var(--blue); }
 .stripes i:nth-child(2) { background: var(--white); }
-.stripes i:nth-child(3) { background: var(--charcoal); }
+.stripes i:nth-child(3) { background: var(--slate); }
 
 .header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; padding: 20px 0; }
 .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--charcoal); font-size: 1.125rem; letter-spacing: -0.01em; }
 .brand img { display: block; border-radius: 4px; }
 .brand span { white-space: nowrap; }
 .brand b { font-weight: 700; color: var(--blue); }
+.brand img { background: #1b74c0; }
 .header nav { display: flex; gap: 22px; font-weight: 500; }
 .header nav a { color: var(--charcoal); text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
 .header nav a:hover { color: var(--blue); border-bottom-color: var(--blue); }
+.theme-toggle { font: inherit; font-size: 0.875rem; color: var(--slate); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+.theme-toggle:hover { color: var(--blue); border-color: var(--blue); }
+.header-right { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
 
 /* Hero: full-bleed, animated canvas behind the copy (hero-motion.js) */
-.hero { position: relative; overflow: hidden; background: linear-gradient(180deg, #eaf3fb 0%, #f6f9fc 70%, var(--white) 100%); }
+.hero { position: relative; overflow: hidden; background: linear-gradient(180deg, var(--hero-top) 0%, var(--hero-mid) 70%, var(--white) 100%); }
 .hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .hero-inner { position: relative; padding: clamp(56px, 10vw, 136px) 0 clamp(56px, 8vw, 112px); }
 .since { color: var(--slate); font-size: 0.9375rem; margin-bottom: 20px; }
 .hero h1 { font-size: clamp(2.25rem, 6vw, 4.25rem); max-width: 14ch; letter-spacing: -0.025em; }
 .hero h1 br { display: none; }
 @media (min-width: 700px) { .hero h1 br { display: inline; } }
-.lede { font-size: clamp(1.125rem, 1.6vw, 1.3125rem); max-width: 54ch; margin: 28px 0 36px; color: #46505a; }
+.lede { font-size: clamp(1.125rem, 1.6vw, 1.3125rem); max-width: 54ch; margin: 28px 0 36px; color: var(--lede-ink); }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .hero-pause { position: absolute; right: var(--gutter); bottom: 12px; font: inherit; font-size: 0.8125rem; color: var(--slate); background: transparent; border: 0; padding: 6px 8px; cursor: pointer; }
 .hero-pause:hover { color: var(--blue); }
@@ -101,7 +147,7 @@ p:last-child { margin-bottom: 0; }
 .section-heading h2 { padding-left: 18px; border-left: 6px solid var(--blue); }
 
 /* Product card: PadLock's own dark/amber, sitting on the white page */
-.product { display: grid; grid-template-columns: 1fr; gap: 32px; background: var(--ink-dark); color: #d7dee4; border-radius: 8px; padding: clamp(28px, 4vw, 48px); align-items: center; }
+.product { display: grid; grid-template-columns: 1fr; gap: 32px; background: var(--ink-dark); color: #d7dee4; border: 1px solid var(--card-edge); border-radius: 8px; padding: clamp(28px, 4vw, 48px); align-items: center; }
 @media (min-width: 820px) { .product { grid-template-columns: 1.3fr 1fr; } }
 .product h3 { color: #fff; font-size: clamp(2rem, 4vw, 2.75rem); letter-spacing: -0.02em; }
 .product-status { display: inline-block; font-size: 0.8125rem; font-weight: 500; color: var(--ink-dark); background: var(--amber); padding: 3px 10px; border-radius: 999px; margin-bottom: 14px; }
@@ -129,11 +175,11 @@ p:last-child { margin-bottom: 0; }
 @media (min-width: 600px) { .form-row { grid-template-columns: 1fr 1fr; } }
 .form-row > div { display: grid; gap: 6px; }
 .contact-form label { font-weight: 500; font-size: 0.9375rem; }
-.contact-form input, .contact-form textarea { width: 100%; font: inherit; color: var(--charcoal); background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 11px 12px; }
+.contact-form input, .contact-form textarea { width: 100%; font: inherit; color: var(--charcoal); background: var(--white); border: 1px solid var(--line); border-radius: 4px; padding: 11px 12px; }
 .contact-form input:focus, .contact-form textarea:focus { border-color: var(--blue); outline: none; box-shadow: 0 0 0 3px var(--blue-wash); }
 .contact-form textarea { resize: vertical; min-height: 160px; }
 .form-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-.form-error { color: #b3261e; font-weight: 500; min-height: 1.5em; margin: 0; }
+.form-error { color: var(--error); font-weight: 500; min-height: 1.5em; margin: 0; }
 .form-error:empty { display: none; }
 .contact-form .button { justify-self: start; }
 .fine-print { font-size: 0.875rem; color: var(--slate); }

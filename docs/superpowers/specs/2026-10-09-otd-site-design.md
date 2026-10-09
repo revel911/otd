@@ -10,10 +10,10 @@ Story: Our Time Designs started in 2008 as a small design and marketing studio, 
 ## Scope
 One static page, anchored sections: hero, products (one PadLock card, room for more), about (studio + founder, link to LinkedIn), contact (form), footer (LLC line). Plain HTML/CSS/JS, no build step, no framework, no analytics. Deployed with GitHub Pages to ourtimedesigns.com, same pattern as drumwithpadlock.com.
 
-Out of scope: résumé timeline, blog, dark theme, second product, CMS.
+Out of scope: résumé timeline, blog, second product, CMS.
 
 ## Visual direction
-"Evolved letterhead": white and light-gray field, letterhead blue primary, charcoal text, orange used as a rare accent. The letterhead's devices carry the identity: the thick blue rule at the page's right edge, the blue/orange/charcoal stripe, bracketed `[ segment ]` info strips. The leaf mark is redrawn as SVG (the original was only a small JPG). One typeface (Figtree), left-aligned.
+"Evolved letterhead": white and light-gray field, letterhead blue primary, charcoal text, no orange (owner cut it after the first draft). A dark theme follows the system, with a header toggle. The letterhead's devices carry the identity: the thick blue rule at the page's right edge, the blue/orange/charcoal stripe, bracketed `[ segment ]` info strips. The leaf mark is traced from the owner-supplied PNG of the original logo. One typeface (Figtree), left-aligned.
 
 ## Contact form
 Fields: name, email, message, hidden honeypot. Posts (plain form POST into a hidden iframe) to a Google Apps Script web app (`contact-apps-script.gs`) that emails support@ourtimedesignsllc.com. Until the endpoint URL is set in `site.js`, Send opens the visitor's email app addressed to support. Same mechanism as PadLock's feedback form.

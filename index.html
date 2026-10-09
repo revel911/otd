@@ -4,12 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Our Time Designs</title>
-<meta name="description" content="Our Time Designs is a Richmond, Virginia design studio that builds its own products. First up: PadLock, adaptive drums for guitarists and bassists.">
+<meta name="description" content="Our Time Designs builds the tools we wished existed. A product studio in Richmond, Virginia. First up: PadLock, drums that listen to your riff.">
 <meta property="og:title" content="Our Time Designs">
-<meta property="og:description" content="A Richmond, Virginia design studio that builds its own products. First up: PadLock.">
+<meta property="og:description" content="We build the tools we wished existed. First up: PadLock, drums that listen to your riff.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ourtimedesigns.com/">
 <meta name="theme-color" content="#1b74c0">
+<script>try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="icon" href="assets/leaf-tile.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,23 +30,26 @@
     <img src="assets/leaf-tile.svg" width="40" height="40" alt="">
     <span>Our Time <b>Designs</b></span>
   </a>
-  <nav aria-label="Sections">
-    <a href="#products">Products</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="header-right">
+    <nav aria-label="Sections">
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Dark</button>
+  </div>
 </header>
 
 <main id="main">
 <section class="hero" id="top">
   <canvas id="hero-canvas" aria-hidden="true"></canvas>
   <div class="wrap hero-inner">
-    <p class="since">Est. 2008, Richmond, VA</p>
-    <h1>We&rsquo;re back. <br>This time, we&rsquo;re building our own.</h1>
-    <p class="lede">Our Time Designs started as a small design and marketing studio for other people&rsquo;s businesses. Today it&rsquo;s a product studio: we design, build and ship our own software, starting with music tools made by a musician.</p>
+    <p class="since">Richmond, Virginia. Est. 2008. Back in business 2026.</p>
+    <h1>We build the tools <br>we wished existed.</h1>
+    <p class="lede">Our Time Designs is a small product studio with twenty years of design leadership behind it and a lifetime of playing music. We used to make other people&rsquo;s brands look good. Now we make software, and we ship it. First up: drums that listen.</p>
     <div class="actions">
       <a class="button primary" href="#products">Meet PadLock</a>
-      <a class="button quiet" href="#about">Our story</a>
+      <a class="button quiet" href="#about">Why we&rsquo;re back</a>
     </div>
   </div>
   <button class="hero-pause" id="hero-pause" type="button" aria-pressed="false">Pause motion</button>
@@ -54,18 +58,18 @@
 <section class="section wrap" id="products">
   <div class="section-heading">
     <h2>Products</h2>
-    <p>One so far. It&rsquo;s the one we wanted for ourselves.</p>
+    <p>One app so far. It&rsquo;s a good one.</p>
   </div>
   <article class="product">
     <div class="product-copy">
       <p class="product-status">Pre-launch preview</p>
       <h3>PadLock</h3>
-      <p class="product-tag">Adaptive drums for guitarists and bassists.</p>
-      <p>Plug in your guitar or bass, play the riff, and PadLock writes a drum part that locks to it. Shape each song section with a few knobs, audition it, then drag the MIDI straight into your DAW. A standalone app for Windows and Mac.</p>
+      <p class="product-tag">Drums that listen to your riff.</p>
+      <p>Plug in. Play. PadLock hears your guitar or bass and writes a drum part that locks to it. Shape each section with a few knobs, audition it, then drag the MIDI into your DAW. Windows and Mac, no plugin install.</p>
       <ul class="product-points">
-        <li>Hears the onsets in your playing and lands the kick on them.</li>
-        <li>Whole songs, section by section, with fills and transitions planned across the arrangement.</li>
-        <li>Note maps for GM, Superior Drummer 3, EZdrummer 3, GetGood Drums and KRIMH.</li>
+        <li>Locks the kick to your playing, not to a grid.</li>
+        <li>Thinks in songs: fills, transitions and entries planned across the whole arrangement.</li>
+        <li>Speaks GM, Superior Drummer 3, EZdrummer 3, GetGood Drums and KRIMH.</li>
       </ul>
       <a class="button product-button" href="https://drumwithpadlock.com">Visit drumwithpadlock.com</a>
     </div>
@@ -86,18 +90,18 @@
 <section class="section wrap band" id="about">
   <div class="section-heading">
     <h2>About</h2>
-    <p>A studio, a founder, and a long pause in between.</p>
+    <p>A studio that took a gap year. Fifteen of them.</p>
   </div>
   <div class="about">
     <div>
       <h3>The studio</h3>
-      <p>Our Time Designs opened in Richmond in 2008, when smartphones were new and small businesses needed someone to help them show up there. For three years we did design and marketing for ad agencies, magazines, construction firms and other local companies.</p>
-      <p>Then the founder went to lead design inside a large bank, and the studio went quiet. In 2026 it came back with a different job: building and shipping our own products, with the same care we used to put into other people&rsquo;s.</p>
+      <p>Our Time Designs opened in 2008 to help Richmond&rsquo;s small businesses look good on the brand-new smartphone screen. Ad agencies, magazines, construction companies: if it needed design and marketing, we did it.</p>
+      <p>Then the founder went to lead design at a very large bank, and the studio went quiet. In 2026 it&rsquo;s back with a sharper job: build our own products, and ship them.</p>
     </div>
     <div>
       <h3>The founder</h3>
-      <p>Tommy Rayburn has spent twenty years in design, the last thirteen at Capital One, where he currently leads design for AI and machine-learning platforms and previously set the experience direction for small business banking and consumer credit card rewards.</p>
-      <p>Outside of banking he has designed and produced board games, consulted on VR interaction design, and played music for most of his life. PadLock exists because he wanted it to.</p>
+      <p>Tommy Rayburn has led design for twenty years, the last thirteen at Capital One, where he runs design for AI and machine-learning platforms. Before that: small business banking, credit card rewards used by tens of millions of people, board games, VR.</p>
+      <p>He also plays. PadLock exists because he got tired of programming drums by hand.</p>
       <p><a class="text-link" href="https://www.linkedin.com/in/tommyrayburn/" rel="me">Tommy on LinkedIn</a></p>
     </div>
   </div>
@@ -106,7 +110,7 @@
 <section class="section wrap" id="contact">
   <div class="section-heading">
     <h2>Contact</h2>
-    <p>Questions about a product, a license, or working together. Messages go to <a href="mailto:support@ourtimedesignsllc.com">support@ourtimedesignsllc.com</a>.</p>
+    <p>A question, a license problem, an idea. Write to us and a person answers, from <a href="mailto:support@ourtimedesignsllc.com">support@ourtimedesignsllc.com</a>.</p>
   </div>
   <form id="contact-form" class="contact-form" novalidate>
     <div class="form-row">
@@ -122,7 +126,7 @@
   </form>
   <div id="contact-thanks" class="contact-thanks" hidden role="status">
     <h3>Sent.</h3>
-    <p>Thanks for writing. We read everything and reply from support@ourtimedesignsllc.com.</p>
+    <p>Thanks for writing. A person reads it and replies from support@ourtimedesignsllc.com.</p>
   </div>
   <iframe name="contact-sink" id="contact-sink" title="Contact form submission" hidden></iframe>
 </section>
