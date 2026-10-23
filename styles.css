@@ -162,7 +162,7 @@ p:last-child { margin-bottom: 0; }
 .product-art { order: -1; }
 .product-art svg { width: 100%; max-width: 280px; height: auto; display: block; }
 .product-art .grid path { stroke: #2a343c; stroke-width: 1; }
-.product-art .wave { stroke: #68c6bc; stroke-width: 2.5; stroke-linecap: round; }
+.product-art .wave { stroke: #4e9fe3; stroke-width: 2.5; stroke-linecap: round; }
 .product-art .hits rect { fill: var(--amber); }
 
 /* About */
