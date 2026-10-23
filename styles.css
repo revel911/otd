@@ -146,18 +146,21 @@ p:last-child { margin-bottom: 0; }
 .section-heading p { color: var(--slate); font-size: 1.125rem; max-width: 60ch; }
 .section-heading h2 { padding-left: 18px; border-left: 6px solid var(--blue); }
 
-/* Product card: PadLock's own dark/amber, sitting on the white page */
-.product { display: grid; grid-template-columns: 1fr; gap: 32px; background: var(--ink-dark); color: #d7dee4; border: 1px solid var(--card-edge); border-radius: 8px; padding: clamp(28px, 4vw, 48px); align-items: center; }
-@media (min-width: 820px) { .product { grid-template-columns: 1.3fr 1fr; } }
-.product h3 { color: #fff; font-size: clamp(2rem, 4vw, 2.75rem); letter-spacing: -0.02em; }
-.product-status { display: inline-block; font-size: 0.8125rem; font-weight: 500; color: var(--ink-dark); background: var(--amber); padding: 3px 10px; border-radius: 999px; margin-bottom: 14px; }
-.product-tag { color: var(--amber); font-weight: 500; font-size: 1.125rem; margin: 8px 0 16px; }
-.product-points { margin: 0 0 28px; padding-left: 1.2em; }
-.product-points li { margin-bottom: 8px; }
+/* Product cards: two compact cards side by side, PadLock's own dark/amber on the white page */
+.products { display: grid; gap: 20px; }
+@media (min-width: 820px) { .products { grid-template-columns: 1fr 1fr; } }
+.product { display: grid; grid-template-rows: auto 1fr; gap: 20px; background: var(--ink-dark); color: #d7dee4; border: 1px solid var(--card-edge); border-radius: 8px; padding: clamp(22px, 2.6vw, 32px); font-size: 0.9375rem; }
+.product-copy { display: flex; flex-direction: column; }
+.product h3 { color: #fff; font-size: clamp(1.625rem, 2.4vw, 2rem); letter-spacing: -0.02em; }
+.product-status { display: inline-block; align-self: flex-start; font-size: 0.75rem; font-weight: 500; color: var(--ink-dark); background: var(--amber); padding: 3px 10px; border-radius: 999px; margin-bottom: 12px; }
+.product-tag { color: var(--amber); font-weight: 500; font-size: 1rem; margin: 6px 0 12px; }
+.product-points { margin: 12px 0 22px; padding-left: 1.2em; }
+.product-points li { margin-bottom: 6px; }
 .product-points li::marker { color: var(--amber); }
-.button.product-button { background: var(--amber); color: var(--ink-dark); border-color: var(--amber); }
+.button.product-button { background: var(--amber); color: var(--ink-dark); border-color: var(--amber); margin-top: auto; align-self: flex-start; }
 .button.product-button:hover { background: #ffcf8a; border-color: #ffcf8a; color: var(--ink-dark); }
-.product-art svg { width: 100%; height: auto; display: block; }
+.product-art { order: -1; }
+.product-art svg { width: 100%; max-width: 280px; height: auto; display: block; }
 .product-art .grid path { stroke: #2a343c; stroke-width: 1; }
 .product-art .wave { stroke: #68c6bc; stroke-width: 2.5; stroke-linecap: round; }
 .product-art .hits rect { fill: var(--amber); }
