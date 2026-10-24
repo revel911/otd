@@ -2,7 +2,7 @@
 // emails support. Until its URL is set below, Send opens the visitor's email app with the same message
 // addressed to support. See README.md, "Contact form".
 // The web app's URL: "https://script.google.com/macros/s/<deployment id>/exec". Empty = email.
-const CONTACT_ENDPOINT = '';
+const CONTACT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyySP8wfAyGDKBsu0hvkdp-R9P3VbrR6heyNZNofIpjEEZv7CEbBXSXZ3MxhR6TfR-v1Q/exec';
 const SUPPORT_EMAIL = 'support@ourtimedesignsllc.com';
 
 const form = document.getElementById('contact-form');
